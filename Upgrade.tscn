@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Upgrade.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Tiles/tile_0286.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Tiles/tile_0282.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/BluuNext-Bold.otf" type="DynamicFontData" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 35
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 4 )
+
+[node name="Upgrade" type="Node2D" groups=[
+"upgrade",
+]]
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="PlayerCollisionBox" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="Shape" type="CollisionShape2D" parent="PlayerCollisionBox"]
+shape = SubResource( 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_top = -21.0
+margin_right = 277.0
+margin_bottom = 64.0
+rect_scale = Vector2( 0.2, 0.2 )
+use_top_left = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CenterContainer"]
+margin_left = -70.0
+margin_top = -22.0
+margin_right = 69.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 2 )
+text = "Upgrade"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="body_entered" from="PlayerCollisionBox" to="." method="_on_PlayerCollisionBox_body_entered"]
+[connection signal="body_exited" from="PlayerCollisionBox" to="." method="_on_PlayerCollisionBox_body_exited"]

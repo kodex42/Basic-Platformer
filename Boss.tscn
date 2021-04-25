@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Boss.gd" type="Script" id=1]
+[ext_resource path="res://HealthBar.tscn" type="PackedScene" id=2]
+
+[node name="Boss" type="KinematicBody2D" groups=[
+"enemy",
+]]
+collision_layer = 2
+collision_mask = 7
+script = ExtResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="DyingTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="HitCollision" type="Area2D" parent="."]
+
+[node name="UI" type="Node2D" parent="."]
+scale = Vector2( 2, 1.2 )
+z_index = 10
+
+[node name="HealthContainer" parent="UI" instance=ExtResource( 2 )]
+margin_left = -17.868
+margin_top = -25.862
+margin_right = 18.132
+margin_bottom = -21.862
+[connection signal="health_changed" from="." to="UI/HealthContainer" method="_on_Boss_health_changed"]
+[connection signal="max_health_changed" from="." to="UI/HealthContainer" method="_on_Boss_max_health_changed"]

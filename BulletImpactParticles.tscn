@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://BulletImpactParticles.gd" type="Script" id=1]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 1
+emission_sphere_radius = 1.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 86.3
+initial_velocity_random = 0.61
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 1.5
+
+[node name="BulletImpactParticles" type="Particles2D"]
+z_index = 10
+emitting = false
+amount = 5
+lifetime = 5.0
+one_shot = true
+speed_scale = 1.5
+explosiveness = 1.0
+process_material = SubResource( 1 )
+script = ExtResource( 1 )

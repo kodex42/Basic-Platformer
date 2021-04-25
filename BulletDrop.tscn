@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/UI/bullet.png" type="Texture" id=1]
+[ext_resource path="res://Drop.tscn" type="PackedScene" id=2]
+
+[node name="BulletDrop" instance=ExtResource( 2 )]
+type = 3
+auto = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="0"]
+polygon = PoolVector2Array( -0.0488625, 8.02731, 4.01586, 8.02731, 4.12722, -4.9464, 2.95792, -7.11797, 0.897717, -8.06455, -0.939762, -8.00887, -2.99997, -7.00661, -3.94654, -5.05777, -4.00223, 8.02731 )
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource( 1 )

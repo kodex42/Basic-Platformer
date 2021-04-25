@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ShopItem.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Tiles/tile_0872.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/BluuNext-Bold.otf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+use_mipmaps = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[node name="ShopItem" type="Node2D" groups=[
+"no_interaction_preview",
+]]
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 1 )
+
+[node name="ItemPos" type="Position2D" parent="."]
+position = Vector2( 0, -22 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.5, -10 )
+texture = ExtResource( 2 )
+
+[node name="PriceLabel" type="Label" parent="."]
+modulate = Color( 0.501961, 0.501961, 0.501961, 0.501961 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -8.0
+margin_top = -42.0
+margin_right = 97.0
+margin_bottom = 43.0
+rect_scale = Vector2( 0.15, 0.15 )
+custom_fonts/font = SubResource( 1 )
+text = "100"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PurchaseArea" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PurchaseArea"]
+position = Vector2( 0, -10 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="PurchaseArea" to="." method="_on_PurchaseArea_body_entered"]
+[connection signal="body_exited" from="PurchaseArea" to="." method="_on_PurchaseArea_body_exited"]

@@ -1,0 +1,126 @@
+0:r:P{2,13}
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+x                            x
+x                            x
+x                            x
+x                            x
+x                            x
+x                            x
+x                            x
+x                            x
+x                            x
+x                            x
+x                            x
+xooooo\                      |
+xxxxxx]\                     |
+xxxxxxx]\                    |
+xxxxxxxx]ooooooooooooooooooooo
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+1:l,r:WD{14.5,11}
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+x                            x
+x                            x
+x                            x
+x                            x
+x                            x
+x                            x
+x        2          2        x
+x                            x
+x                            x
+x      2    qoooop    2      x
+x        /oo[xxxx]oo\        x
+|       /[xxxxxxxxxx]\       |
+|      /[xxxxxxxxxxxx]\      |
+|     /[xxxxxxxxxxxxxx]\     |
+oooooo[xxxxxxxxxxxxxxxx]oooooo
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+2:l,u,r:WM{28,9}
+xxxxxxxxxxxxx____xxxxxxxxxxxxx
+xxxxxxxxxxxxx    xxxxxxxxxxxxx
+xxxxxxxxxxxxx----xxxxxxxxxxxxx
+x                            x
+x                            x
+x            1               x
+x            ----          2 x
+x                            x
+x                            x
+x               1          (ox
+x            ----            x
+x                            x
+x                            x
+x            1               x
+|            ----            |
+|                            |
+|   3                    3   |
+ooooooooo\          /ooooooooo
+xxxxxxxxx]\        /[xxxxxxxxx
+xxxxxxxxxx]oooooooo[xxxxxxxxxx
+3:l,r,d:WS{25.5,3}
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxx      xxx
+xxxxxxxxxxxxxxxxxxxxx      xxx
+xxxxxxxxxxxxxxxxxxxxx    (oxxx
+xxxxxxxxxxxxxxxxxxxxx     xxxx
+xxxxxxxxxxxxxxxxxxxxx     xxxx
+xxxxxxxxxxxxxxxxxxxxx     xxxx
+xxxxxxxxxxxxxxxxxxxxxo)   xxxx
+xxxxxxxxxxxxxxxxxxxxxx    xxxx
+xxxxxxxxxxxxxxxxxxxxxx    xxxx
+xxxxxxxxxxxxxxxxxxxxxx    xxxx
+xxxxxxxxxxxxxxxxxxxxxx    xxxx
+|                            |
+|                            |
+|                            |
+ooooooooooo\      /ooooooooooo
+xxxxxxxxxxx]\    /[xxxxxxxxxxx
+xxxxxxxxxxxx]----[xxxxxxxxxxxx
+xxxxxxxxxxxxx____xxxxxxxxxxxxx
+4:r,u
+xxxxxxxxxxxxx____xxxxxxxxxxxxx
+x        1          1        x
+x       --------------       x
+x                            x
+x                            x
+x             /\             x
+x            /[]\            x
+x           /[xx]\           x
+x       2  /[xxxx]\  2       x
+x         /[xxxxxx]\         x
+x         ----------         x
+x    1                  1    x
+x  -----              -----  x
+x                            |
+x                            |
+x    3                  3    |
+xooooooooooooooooooooooooooooo
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+5:d:WP{14.5,1}
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxx||||||||||||||x
+xxxxxxxxxxxxxxx||||||||||||||x
+xxxxxxxxxxxxxxx||||||||||||||x
+xxxxxxxxxxxxxxx|||xxxxxxxxxxxx
+xxxxxxxxxxxxxxx|||xxxxxxxxxxxx
+x                            x
+x                            x
+xoooooooooooo----oooooooooooox
+x                            x
+x                            x
+x                            x
+x                            x
+x                            x
+x                            x
+x                            x
+x                            x
+x                            x
+xoooooooooooo----oooooooooooox
+xxxxxxxxxxxxx____xxxxxxxxxxxxx

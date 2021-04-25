@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://MapTilesets/MapTileWithEnemies.gd" type="Script" id=1]
+[ext_resource path="res://EnemySpawner.tscn" type="PackedScene" id=2]
+[ext_resource path="res://MapTilesets/Dirty Depths/Normal/1exit/RDeadEnd.tscn" type="PackedScene" id=3]
+
+[node name="RDeadEndDanger" instance=ExtResource( 3 )]
+script = ExtResource( 1 )
+has_right_exit = false
+
+[node name="Enemies" type="Node2D" parent="." index="5"]
+
+[node name="EnemySpawner" parent="Enemies" index="0" instance=ExtResource( 2 )]
+position = Vector2( 84, 84 )
+spawn_type = "red_wiggler"
+
+[node name="EnemySpawner2" parent="Enemies" index="1" instance=ExtResource( 2 )]
+position = Vector2( 147, 126 )
+spawn_type = "green_wiggler"
+
+[node name="EnemySpawner3" parent="Enemies" index="2" instance=ExtResource( 2 )]
+position = Vector2( 210, 168 )
+spawn_type = "red_wiggler"
+
+[node name="EnemySpawner4" parent="Enemies" index="3" instance=ExtResource( 2 )]
+position = Vector2( 273, 210 )
+spawn_type = "green_wiggler"
+[connection signal="body_entered" from="RoomDetectionArea" to="." method="_on_RoomDetectionArea_body_entered"]

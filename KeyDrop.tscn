@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Drop.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Tiles/tile_0014.png" type="Texture" id=2]
+
+[node name="KeyDrop" instance=ExtResource( 1 )]
+type = 5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="0"]
+polygon = PoolVector2Array( 6.93301, -2.01226, -1.01297, -1.94605, -3.49608, -4.5616, -5.61501, -4.5616, -8.03191, -1.91294, -8.03191, -0.0588779, -5.11839, 3.02019, -4.02582, 3.02019, -1.01297, 0.0404463, 1.96677, 0.073555, 1.96677, 3.0864, 6.96612, 3.02019 )
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource( 2 )

@@ -1,0 +1,294 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://Assets/Tiles/tile_0022.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Tiles/tile_0026.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Tiles/tile_0028.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Tiles/tile_0020.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Tiles/tile_0029.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Tiles/tile_0027.png" type="Texture" id=6]
+[ext_resource path="res://Player.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Tiles/tile_0023.png" type="Texture" id=8]
+[ext_resource path="res://WeaponSprite.gd" type="Script" id=9]
+[ext_resource path="res://HealthBar.tscn" type="PackedScene" id=10]
+[ext_resource path="res://MeleeHitbox.gd" type="Script" id=11]
+[ext_resource path="res://Assets/Effects/melee_attack.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Effects/melee_aim.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Tiles/tile_0019.png" type="Texture" id=14]
+[ext_resource path="res://GridSnapper.gd" type="Script" id=15]
+[ext_resource path="res://Assets/UI/BluuNext-Bold.otf" type="DynamicFontData" id=16]
+[ext_resource path="res://Assets/Tiny Guns/1s1k.png" type="Texture" id=17]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+use_mipmaps = true
+font_data = ExtResource( 16 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 8 ) ],
+"loop": false,
+"name": "sliding",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": false,
+"name": "crouching",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": false,
+"name": "A Pose",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "standing",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "walking",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "jumping",
+"speed": 2.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 5.41374, 10 )
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 8.40308
+height = 23.0466
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 12 )
+region = Rect2( 256, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 12 )
+region = Rect2( 512, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 12 )
+region = Rect2( 768, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 12 )
+region = Rect2( 1024, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 12 )
+region = Rect2( 1280, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 12 )
+region = Rect2( 1536, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 12 )
+region = Rect2( 1792, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 256, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 12 )
+region = Rect2( 256, 256, 256, 256 )
+
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"loop": false,
+"name": "default",
+"speed": 50.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 6.18509, 10.535 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 1.34834, 8.06426 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 4.00369, 1.03728 )
+
+[node name="Player" type="KinematicBody2D" groups=[
+"player",
+]]
+position = Vector2( 1, 0 )
+z_index = 2
+collision_mask = 7
+script = ExtResource( 7 )
+
+[node name="UI" type="Node2D" parent="."]
+z_index = 10
+
+[node name="HealthContainer" parent="UI" instance=ExtResource( 10 )]
+margin_left = -17.8676
+margin_top = -15.8621
+margin_right = 18.1324
+margin_bottom = -11.8621
+
+[node name="InteractionPromptLabel" type="Label" parent="UI"]
+visible = false
+margin_left = -3.0
+margin_top = -36.0
+margin_right = 38.0
+margin_bottom = 49.0
+rect_scale = Vector2( 0.15, 0.15 )
+custom_fonts/font = SubResource( 1 )
+custom_constants/shadow_as_outline = 0
+text = "E"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="UI"]
+margin_left = -10.0
+margin_top = -52.0
+margin_right = 10.0
+margin_bottom = -32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InteractionContext" type="TextureRect" parent="UI/CenterContainer"]
+visible = false
+margin_left = 1.0
+margin_top = 6.0
+margin_right = 18.0
+margin_bottom = 13.0
+texture = ExtResource( 17 )
+
+[node name="InvulnerabilityTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="MeleeAttackTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="KnockbackTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "A Pose"
+playing = true
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 0.445953, 0.371627 )
+shape = SubResource( 3 )
+
+[node name="MeleeHitbox" type="Area2D" parent="." groups=[
+"melee",
+]]
+collision_mask = 2
+script = ExtResource( 11 )
+
+[node name="HitboxShape" type="CollisionShape2D" parent="MeleeHitbox"]
+shape = SubResource( 4 )
+disabled = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="MeleeHitbox/HitboxShape"]
+visible = false
+scale = Vector2( 0.5, 0.2 )
+frames = SubResource( 15 )
+
+[node name="AimTexture" type="TextureRect" parent="MeleeHitbox/HitboxShape"]
+visible = false
+margin_left = -64.0992
+margin_top = -17.9921
+margin_right = 191.901
+margin_bottom = 270.008
+rect_scale = Vector2( 0.5, 0.125 )
+texture = ExtResource( 13 )
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HitCollisionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2147483650
+
+[node name="HitCollisionShape" type="CollisionShape2D" parent="HitCollisionArea"]
+position = Vector2( 0.5, 0.3 )
+shape = SubResource( 16 )
+
+[node name="WeaponSprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, 7 )
+offset = Vector2( 2, -3 )
+script = ExtResource( 9 )
+
+[node name="CrushAreas" type="Node2D" parent="."]
+
+[node name="RightCrushArea" type="Area2D" parent="CrushAreas"]
+position = Vector2( 6.5, 0 )
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrushAreas/RightCrushArea"]
+shape = SubResource( 17 )
+
+[node name="UpCrushArea" type="Area2D" parent="CrushAreas"]
+position = Vector2( 0.5, -10 )
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrushAreas/UpCrushArea"]
+shape = SubResource( 18 )
+
+[node name="LeftCrushArea" type="Area2D" parent="CrushAreas"]
+position = Vector2( -5.5, 0 )
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrushAreas/LeftCrushArea"]
+shape = SubResource( 17 )
+
+[node name="DownCrushArea" type="Area2D" parent="CrushAreas"]
+position = Vector2( 0.5, 11 )
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrushAreas/DownCrushArea"]
+shape = SubResource( 18 )
+
+[node name="GridSnapper" type="Position2D" parent="."]
+script = ExtResource( 15 )
+
+[node name="Camera" type="Camera2D" parent="GridSnapper"]
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.5, 0.5 )
+limit_left = -1260
+limit_bottom = 420
+limit_smoothed = true
+smoothing_enabled = true
+smoothing_speed = 8.0
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+[connection signal="health_changed" from="." to="UI/HealthContainer" method="_on_Player_health_changed"]
+[connection signal="timeout" from="InvulnerabilityTimer" to="." method="_on_InvulnerabilityTimer_timeout"]
+[connection signal="timeout" from="MeleeAttackTimer" to="." method="_on_MeleeAttackTimer_timeout"]
+[connection signal="timeout" from="KnockbackTimer" to="." method="_on_KnockbackTimer_timeout"]
+[connection signal="area_shape_entered" from="MeleeHitbox" to="." method="_on_MeleeHitbox_area_shape_entered"]
+[connection signal="body_shape_entered" from="MeleeHitbox" to="." method="_on_MeleeHitbox_body_shape_entered"]
+[connection signal="area_shape_entered" from="HitCollisionArea" to="." method="_on_HitCollisionArea_area_shape_entered"]
+[connection signal="body_shape_entered" from="HitCollisionArea" to="." method="_on_HitCollisionArea_body_shape_entered"]
+[connection signal="body_entered" from="CrushAreas/RightCrushArea" to="." method="_on_RightCrushArea_body_entered"]
+[connection signal="body_exited" from="CrushAreas/RightCrushArea" to="." method="_on_RightCrushArea_body_exited"]
+[connection signal="body_entered" from="CrushAreas/UpCrushArea" to="." method="_on_UpCrushArea_body_entered"]
+[connection signal="body_exited" from="CrushAreas/UpCrushArea" to="." method="_on_UpCrushArea_body_exited"]
+[connection signal="body_entered" from="CrushAreas/LeftCrushArea" to="." method="_on_LeftCrushArea_body_entered"]
+[connection signal="body_exited" from="CrushAreas/LeftCrushArea" to="." method="_on_LeftCrushArea_body_exited"]
+[connection signal="body_entered" from="CrushAreas/DownCrushArea" to="." method="_on_DownCrushArea_body_entered"]
+[connection signal="body_exited" from="CrushAreas/DownCrushArea" to="." method="_on_DownCrushArea_body_exited"]

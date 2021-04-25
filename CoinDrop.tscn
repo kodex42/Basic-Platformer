@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Tiles/tile_0078.png" type="Texture" id=1]
+[ext_resource path="res://Drop.tscn" type="PackedScene" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 8.43958
+
+[node name="CoinDrop" instance=ExtResource( 2 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+shape = SubResource( 1 )
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2( 0.75, 0.75 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 1 )

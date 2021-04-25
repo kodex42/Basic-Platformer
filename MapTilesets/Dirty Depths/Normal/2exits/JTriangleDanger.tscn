@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://EnemySpawner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://MapTilesets/MapTileWithEnemies.gd" type="Script" id=2]
+[ext_resource path="res://MapTilesets/Dirty Depths/Normal/2exits/JTriangle.tscn" type="PackedScene" id=3]
+
+[node name="JTriangleDanger" instance=ExtResource( 3 )]
+script = ExtResource( 2 )
+
+[node name="Enemies" type="Node2D" parent="." index="5"]
+
+[node name="EnemySpawner" parent="Enemies" index="0" instance=ExtResource( 1 )]
+position = Vector2( 147, 252 )
+spawn_type = "spider"
+
+[node name="EnemySpawner2" parent="Enemies" index="1" instance=ExtResource( 1 )]
+position = Vector2( 483, 252 )
+spawn_type = "spider"
+
+[node name="EnemySpawner3" parent="Enemies" index="2" instance=ExtResource( 1 )]
+position = Vector2( 546, 168 )
+spawn_type = "spider"
+
+[node name="EnemySpawner4" parent="Enemies" index="3" instance=ExtResource( 1 )]
+position = Vector2( 84, 168 )
+spawn_type = "spider"
+
+[node name="EnemySpawner5" parent="Enemies" index="4" instance=ExtResource( 1 )]
+position = Vector2( 420, 84 )
+spawn_type = "frog"
+[connection signal="body_entered" from="RoomDetectionArea" to="." method="_on_RoomDetectionArea_body_entered"]

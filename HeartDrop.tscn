@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Tiles/tile_0373.png" type="Texture" id=1]
+[ext_resource path="res://Drop.tscn" type="PackedScene" id=2]
+
+[node name="HeartDrop" instance=ExtResource( 2 )]
+type = 2
+auto = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="0"]
+polygon = PoolVector2Array( 0.875, 8, 9.0625, -0.0625, 9.125, -4.0625, 5.8125, -7.0625, 2, -7, 0, -4.8125, -2.0625, -7.0625, -6.125, -7.0625, -9.0625, -4.125, -9.0625, 0, -1, 7.875 )
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
